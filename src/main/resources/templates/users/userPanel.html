@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>User Panel</title>
+</head>
+
+<body>
+<!--Шапка-->
+<nav class="navbar navbar-default" style="background-color: #343a40">
+  <a class="navbar-brand">
+    <ul class="list-inline" style="color:white">
+      <b>
+        <li class="list-inline-item"th:text="${user.username}">EMAIL</li>
+      </b>
+      <li class="list-inline-item" th:text="${' with roles: '+ user.rolesName}" style="color:white">ROLES</li>
+    </ul>
+  </a>
+  <div class="row">
+    <div class="col">
+      <form th:action="@{/logout}" th:method="POST">
+        <input class="btn btn-link text-secondary" type="submit" value="Logout"/>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid vh-100">
+  <div class="row vh-100">
+    <div class="col-2">
+      <!--            Навигационная боковая панель слева-->
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        </br>
+        <a class="nav-link active" id="v-pills-user-tab" data-toggle="pill" href="#user" role="tab"
+           aria-controls="v-pills-user" aria-selected="false">User</a>
+      </div>
+    </div>
+
+    <!--        Центр-->
+    <div class="col-10 " style="background-color: #f8f9fa">
+      <div class="tab-content" id="v-pills-tabContent">
+        <!--                Вкладка User-->
+        <div class="tab-pane fade show active" id="user" role="tabpanel" aria-labelledby="v-pills-profile-user">
+          </br>
+          <div class="container-fluid">
+            <h1> User information-page </h1>
+            </br>
+            <div class="border" style="background-color: #f1f1f1">
+              <h5 class="p-3">About user</h5>
+            </div>
+            <div class="card">
+              <div class="container-fluid">
+                <div class="col-1">
+                </div>
+                <div class="col-auto">
+                  <!--                                                                    Таблица пользователя-->
+                  <table class="table table-striped">
+                    <thead>
+                    </br>
+                    <tr>
+                      <th>ID</th>
+                      <th>Имя</th>
+                      <th>Фамилия</th>
+                      <th>Возраст</th>
+                      <th>Email</th>
+                      <th>Role</th>
+                    </tr>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td th:text="${user.getId()}">user</td>
+                      <td th:text="${user.getName()}">user</td>
+                      <td th:text="${user.getLastName()}">user</td>
+                      <td th:text="${user.getAge()}">user</td>
+                      <td th:text="${user.getUsername()}">user</td>
+                      <td th:text="${user.getRolesName()}">user</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-1">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
