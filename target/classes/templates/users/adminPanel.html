@@ -119,9 +119,11 @@
                                                                         <div class="modal-header">
                                                                             <h4 class="modal-title">
                                                                                 Edit user</h4>
-                                                                            <button type="button" class="btn-close"
+                                                                            <button type="button" class="close"
                                                                                     data-dismiss="modal"
-                                                                                    aria-label="close"></button>
+                                                                                    aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
                                                                         </div>
                                                                         <form th:method="PATCH"
                                                                               th:action="@{/admin/{id}(id=${user.getId()})}"
@@ -186,7 +188,8 @@
                                                                                             class="form-control"
                                                                                             name="roles"
                                                                                             id="roles_ed" size="2"
-                                                                                            th:value="${user.roles}" required>
+                                                                                            th:value="${user.roles}"
+                                                                                            required>
                                                                                         <option th:each="role : ${roleList}"
                                                                                                 th:value="${role.id}"
                                                                                                 th:text="${user.getRolesName(role)}"/>
@@ -225,9 +228,11 @@
                                                                         <div class="modal-header">
                                                                             <h4 class="modal-title">
                                                                                 Delete user</h4>
-                                                                            <button type="button" class="btn-close"
+                                                                            <button type="button" class="close"
                                                                                     data-dismiss="modal"
-                                                                                    aria-label="close"></button>
+                                                                                    aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
                                                                         </div>
                                                                         <form th:method="DELETE"
                                                                               th:action="@{/admin/{id}(id=${user.getId()})}">
@@ -269,18 +274,12 @@
                                                                                        id="username_del"
                                                                                        placeholder="Email" disabled>
                                                                                 </br>
-<!--                                                                                <label><strong> Role </strong></label>-->
-<!--                                                                                <select class="form-select" size="2"-->
-<!--                                                                                        name="roles"-->
-<!--                                                                                        disabled>-->
-<!--                                                                                    <option>USER</option>-->
-<!--                                                                                    <option>ADMIN</option>-->
-<!--                                                                                </select>-->
                                                                                 <label><b> Role </b></label>
                                                                                 <select multiple
                                                                                         class="form-control"
                                                                                         size="2"
-                                                                                        th:value="${user.roles}" disabled>
+                                                                                        th:value="${user.roles}"
+                                                                                        disabled>
                                                                                     <option th:each="role : ${roleList}"
                                                                                             th:value="${role.id}"
                                                                                             th:text="${user.getRolesName(role)}"/>
