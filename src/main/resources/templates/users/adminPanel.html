@@ -269,12 +269,14 @@
                                                                                        id="username_del"
                                                                                        placeholder="Email" disabled>
                                                                                 </br>
-                                                                                <label><strong> Role </strong></label>
-                                                                                <select class="form-select" size="2"
-                                                                                        name="roles"
-                                                                                        disabled>
-                                                                                    <option>USER</option>
-                                                                                    <option>ADMIN</option>
+                                                                                <label><b> Role </b></label>
+                                                                                <select multiple
+                                                                                        class="form-control"
+                                                                                        size="2"
+                                                                                        th:value="${user.roles}" disabled>
+                                                                                    <option th:each="role : ${roleList}"
+                                                                                            th:value="${role.id}"
+                                                                                            th:text="${user.getRolesName(role)}"/>
                                                                                 </select>
                                                                             </div>
                                                                             <div class="modal-footer">
