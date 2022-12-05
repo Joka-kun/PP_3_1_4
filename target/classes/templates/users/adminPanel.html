@@ -172,7 +172,7 @@
                                                                                            class="form-control"
                                                                                            id="Username_ed"
                                                                                            th:value="${user.username}"
-                                                                                           placeholder="Email">
+                                                                                           placeholder="Email" required>
                                                                                     </br>
                                                                                     <label for="Password_ed"><b>
                                                                                         Password </b></label>
@@ -181,7 +181,7 @@
                                                                                            class="form-control"
                                                                                            id="Password_ed"
                                                                                            th:value="${user.password}"
-                                                                                           placeholder="Password">
+                                                                                           placeholder="Password" required>
                                                                                     </br>
                                                                                     <label><b> Role </b></label>
                                                                                     <select multiple
@@ -353,7 +353,7 @@
                                                                        class="form-control"
                                                                        id="Username"
                                                                        th:value="*{username}"
-                                                                       placeholder="Email">
+                                                                       placeholder="Email" required>
                                                                 </br>
                                                                 <label for="Password"><b> Password </b></label>
                                                                 <input th:name="password"
@@ -361,7 +361,7 @@
                                                                        class="form-control"
                                                                        id="Password"
                                                                        th:value="*{password}"
-                                                                       placeholder="Password">
+                                                                       placeholder="Password" required>
                                                                 </br>
                                                                 <label><b> Role </b></label>
                                                                 <select multiple class="form-control"

@@ -52,7 +52,7 @@ public class User implements UserDetails {
     public User() {
     }
 
-    public User(String username, String lastName, int age, String email) {
+    public User(String username, String lastName, int age) {
         this.name = username;
         this.lastName = lastName;
         this.age = age;
